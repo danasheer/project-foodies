@@ -18,10 +18,16 @@ from django.urls import path
 from django.urls.conf import include
 from rest_framework import routers
 from accounts import views
-
+from reciepes.views import RecipieDetailView, RecipieUpdateView, RecipeDeleteView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/register/", views.UserCreateView.as_view(), name="register"),
     path("api/login/", views.UserLoginAPIView.as_view(), name="login"),
+    path("api/recipe/delete/<int:object_id>/",
+         RecipeDeleteView.as_view(), name="delete"),
+    path("api/recipe/update/<int:object_id>/",
+         RecipieUpdateView.as_view(), name="update"),
+    path("api/recipe/detail/<int:object_id>/",
+         RecipieDetailView.as_view(), name="retreive"),
 ]

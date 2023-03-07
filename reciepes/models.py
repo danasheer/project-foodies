@@ -18,7 +18,7 @@ class Category(models.Model):
 class Ingredient(models.Model):
     name = models.CharField(max_length=50)
 
-    user_ingredient = models.ForeignKey(
+    user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='ingredients')
 
     def __str__(self):

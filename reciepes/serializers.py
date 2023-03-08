@@ -12,10 +12,10 @@ class ReciepeSerializer(serializers.ModelSerializer):
 class IngrediantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ingredient
-        fields = ['name']
+        fields = ['name', 'id']
 
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ['title']
+        fields = ['title', 'id']
